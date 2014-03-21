@@ -16,9 +16,23 @@
 @property(strong, nonatomic) NSString *of;
 @property(strong, nonatomic) NSString *source;
 @property(strong, nonatomic) NSString *pattern;
-@property(assign, nonatomic) NSUInteger min;
-@property(assign, nonatomic) NSUInteger max;
+@property(strong, nonatomic) NSString *like;
+@property(strong, nonatomic) NSString *notFrom;
+@property(strong, nonatomic) NSString *either;
+
+@property(assign, nonatomic) NSInteger ofGroup;
+@property(strong, nonatomic) NSMutableString *literal;
+@property(assign, nonatomic, getter=isOfAny) BOOL ofAny;
+@property(assign, nonatomic, getter=isMultiLine) BOOL multiLine;
+@property(assign, nonatomic, getter=isReluctant) BOOL reluctant;
+@property(assign, nonatomic) BOOL ignoreCase;
+@property(assign, nonatomic) BOOL capture;
+@property(assign, nonatomic) NSInteger min;
+@property(assign, nonatomic) NSInteger max;
 @property(strong, nonatomic) NSRegularExpressionOptions modifiers;
+
+@property(assign, nonatomic, readonly) NSString *quantityLiteral;
+@property(assign, nonatomic, readonly) NSString *characterLiteral;
 
 @property(readonly, nonatomic) JGORegExpBuilder *(^add)(NSString *value);
 
@@ -31,9 +45,15 @@
     if (self) {
         _prefixes = @"";
         _suffixes = @"";
+
+        [self clear];
     }
     return self;
 }
+
+JGORegExpBuilder *JGORegExpBuilder() {
+    return [[JGORegExpBuilder alloc] init];
+};
 
 #pragma mark - Custom Accessors
 
@@ -61,15 +81,157 @@
     };
 }
 
-- (JGORegExpBuilder *(^)(NSUInteger))min {
-    return ^JGORegExpBuilder *(NSUInteger min) {
+- (JGORegExpBuilder *(^)())anything {
+    return self.min(0).ofAny();
+}
+
+- (JGORegExpBuilder *(^)(NSString *))anythingBut {
+    return ^JGORegExpBuilder *(NSString *anythingBut) {
+        if ([anythingBut length] == 1) {
+            return self.max(1).notFrom([NSString stringWithFormat:@"%C", [anythingBut characterAtIndex:0]]);
+        }
+        self.notAhead(JGORegExpBuilder().exactly(1).of(anythingBut));
+        return self.min(0).ofAny();
+    };
+}
+
+- (JGORegExpBuilder *(^)())something {
+    return ^JGORegExpBuilder *() {
+        return self.min(1).ofAny();
+    };
+}
+
+- (JGORegExpBuilder *(^)(NSString *))somethingBut {
+    return ^JGORegExpBuilder *(NSString *somethingBut) {
+        if ([somethingBut length] == 1) {
+            return self.exactly(1).notFrom([NSString stringWithFormat:@"%C", [somethingBut characterAtIndex:0]]);
+        }
+        self.notAhead(JGORegExpBuilder().exactly(1).of(somethingBut));
+        return self.min(1).ofAny();
+    };
+}
+
+- (JGORegExpBuilder *(^)())lineBreak {
+    return ^JGORegExpBuilder *() {
+        return self.either(@"\\r\\n").orString(@"\\r").orString(@"\\n");
+    };
+}
+
+- (JGORegExpBuilder *(^)())lineBreaks {
+    return ^JGORegExpBuilder *() {
+        return self.like(JGORegExpBuilder().lineBreak());
+    };
+}
+
+- (JGORegExpBuilder *(^)())whitespace {
+    return ^JGORegExpBuilder *() {
+        if (self.min == -1 && self.max == -1) {
+            return self.exactly(1).of(@"\\s");
+        }
+        self.like = @"\\s";
+        return this;
+    };
+}
+
+- (JGORegExpBuilder *(^)())tab {
+    return ^JGORegExpBuilder *() {
+        return self.exactly(1).of(@"\\t");
+    };
+}
+
+- (JGORegExpBuilder *(^)())tabs {
+    return ^JGORegExpBuilder *() {
+        return self.like(JGORegExpBuilder().tab());
+    };
+}
+
+- (JGORegExpBuilder *(^)())digit {
+    return ^JGORegExpBuilder *() {
+        return self.exactly(1).of(@"\\d");
+    };
+}
+
+- (JGORegExpBuilder *(^)())digits {
+    return ^JGORegExpBuilder *() {
+        return self.like(JGORegExpBuilder().digit());
+    };
+}
+
+- (JGORegExpBuilder *(^)())letter {
+    return ^JGORegExpBuilder *() {
+        self.exactly(1);
+        self.from = @"A-Za-z";
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)())letters {
+    return ^JGORegExpBuilder *() {
+        self.from = @"A-Za-z";
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)())lowerCaseLetter {
+    return ^JGORegExpBuilder *() {
+        self.exactly(1);
+        self.from = @"a-z";
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)())lowerCaseLetters {
+    return ^JGORegExpBuilder *() {
+        self.from = @"a-z";
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)())upperCaseLetter {
+    return ^JGORegExpBuilder *() {
+        self.exactly(1);
+        self.from = @"A-Z";
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)())upperCaseLetters {
+    return ^JGORegExpBuilder *() {
+        self.from = @"A-Z";
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)())startOfInput {
+    return ^JGORegExpBuilder *() {
+        [self.literal appendString:@"(?:^)"];
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)())startOfLine {
+    return ^JGORegExpBuilder *() {
+        self.multiLine();
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)())endOfInput {
+    return ^JGORegExpBuilder *() {
+        [self.literal appendString:@"(?:$)"];
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)(NSInteger))min {
+    return ^JGORegExpBuilder *(NSInteger min) {
         self.min = min;
         return self;
     };
 }
 
-- (JGORegExpBuilder *(^)(NSUInteger))max {
-    return ^JGORegExpBuilder *(NSUInteger max) {
+- (JGORegExpBuilder *(^)(NSInteger))max {
+    return ^JGORegExpBuilder *(NSInteger max) {
         self.max = max;
         return self;
     };
@@ -82,10 +244,24 @@
     };
 }
 
+- (JGORegExpBuilder *(^)())ofAny {
+    return ^JGORegExpBuilder *() {
+        self.ofAny = YES;
+        return self;
+    };
+}
+
 - (JGORegExpBuilder *(^)(NSArray *))from {
     return ^JGORegExpBuilder *(NSArray *from) {
         self.from = [self sanitize:[some componentsJoinedByString:@""]];
         return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)(JGORegExpBuilder *))notAhead {
+    return ^JGORegExpBuilder *(JGORegExpBuilder *notAhead) {
+        [self.literal appendString:[NSString stringWithFormat:@"?!%@)", notAhead.literal]];
+        return this;
     };
 }
 
@@ -95,7 +271,69 @@
     };
 }
 
+@dynamic quantityLiteral;
+
+- (NSString *)quantityLiteral {
+    if (self.min -= -1) {
+        if (self.max -= -1) {
+            return [NSString stringWithFormat:@"{%d,%d}", self.min, self.max];
+        }
+        return [NSString stringWithFormat:@"{%d,}", self.min];
+    }
+    return [NSString stringWithFormat:@"{0,%d}", self.max];
+}
+
+@dynamic characterLiteral;
+
+- (NSString *)characterLiteral {
+    if (![self.of isEqualToString:@""]) {
+        return self.of;
+    } else if (self.isOfAny) {
+        return @".";
+    } else if (self.ofGroup > 0) {
+        return [NSString stringWithFormat:@"\\%d", self.ofGroup];
+    } else if (![self.from isEqualToString:@""]) {
+        return [NSString stringWithFormat:@"[%@]", self.from];
+    } else if (![self.notFrom isEqualToString:@""]) {
+        return [NSString stringWithFormat:@"[^%@]", self.notFrom];
+    } else if (![self.like isEqualToString:@""]) {
+        return self.like;
+    }
+    return @"";
+}
+
 #pragma mark - Private
+
+- (void)flushState {
+    if (![self.of isEqualToString:@""] || self.isOfAny || self.ofGroup > 1 || ![self.from isEqualToString:@""]
+            || ![self.notFrom isEqualToString:@""] || ![self.like isEqualToString:@""]) {
+        NSString *captureLiteral = self.capture ? @"" : @"?:";
+        NSString *reluctantLiteral = self.isReluctant ? @"?" : @"";
+        [self.literal stringByAppendingFormat:@"(%@(?:%@)%@%@)",
+                                              captureLiteral,
+                                              [self characterLiteral],
+                                              [self quantityLiteral],
+                                              reluctantLiteral];
+
+        [self clear];
+    }
+}
+
+- (void)clear {
+    self.ignoreCase = NO;
+    self.multiLine = NO;
+    self.min = -1;
+    self.max = -1;
+    self.of = @"";
+    self.ofAny = NO;
+    self.ofGroup = -1;
+    self.from = @"";
+    self.notFrom = @"";
+    self.like = @"";
+    self.either = @"";
+    self.reluctant = NO;
+    self.capture = NO;
+}
 
 - (NSString *)sanitize:(NSString *)value {
     return value ? [NSRegularExpression escapedPatternForString:value] : nil;

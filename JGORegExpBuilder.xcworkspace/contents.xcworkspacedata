@@ -11,8 +11,7 @@
          location = "group:JGORegExpBuilder.m">
       </FileRef>
    </Group>
-   <Group
-      location = "group:Tests"
-      name = "Tests">
-   </Group>
+   <FileRef
+      location = "group:JGORegExpBuilderTests/JGORegExpBuilderTests.xcodeproj">
+   </FileRef>
 </Workspace>
