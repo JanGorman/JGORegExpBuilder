@@ -56,7 +56,9 @@
 }
 
 - (JGORegExpBuilder *(^)(NSString *))maybe {
-    return self.max(1).of(maybe);
+    return ^JGORegExpBuilder *(NSString *maybe) {
+        return self.max(1).of(maybe);
+    };
 }
 
 - (JGORegExpBuilder *(^)(NSUInteger))min {
