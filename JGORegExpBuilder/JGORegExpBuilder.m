@@ -33,13 +33,9 @@
 
 #pragma mark - Custom Accessors
 
-- (JGORegExpBuilder *(^)(BOOL))ignoreCase {
-    return ^JGORegExpBuilder *(BOOL enable) {
-        if (enable) {
-            self.addModifier('i');
-        } else {
-            self.removeModifier('i');
-        }
+- (JGORegExpBuilder *(^)())ignoreCase {
+    return ^JGORegExpBuilder *() {
+        self.addModifier('i');
         return self;
     };
 }
