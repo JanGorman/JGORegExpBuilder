@@ -35,10 +35,9 @@
 @property(nonatomic, readonly) JGORegExpBuilder *(^startOfLine)();
 @property(nonatomic, readonly) JGORegExpBuilder *(^endOfInput)();
 @property(nonatomic, readonly) JGORegExpBuilder *(^endOfLine)();
-// TODO naming
-@property(nonatomic, readonly) JGORegExpBuilder *(^eitherThis)(JGORegExpBuilder *regExpBuilder);
+@property(nonatomic, readonly) JGORegExpBuilder *(^eitherBuilder)(JGORegExpBuilder *regExpBuilder);
 @property(nonatomic, readonly) JGORegExpBuilder *(^orBuilder)(JGORegExpBuilder *regExpBuilder);
-@property(nonatomic, readonly) JGORegExpBuilder *(^either)(NSString *either);
+@property(nonatomic, readonly) JGORegExpBuilder *(^eitherString)(NSString *either);
 @property(nonatomic, readonly) JGORegExpBuilder *(^orString)(NSString *orThat);
 @property(nonatomic, readonly) JGORegExpBuilder *(^neither)(JGORegExpBuilder *regExpBuilder);
 @property(nonatomic, readonly) JGORegExpBuilder *(^nor)(JGORegExpBuilder *regExpBuilder);
@@ -62,6 +61,8 @@
 @property(nonatomic, readonly) JGORegExpBuilder *(^multiLine)();
 @property(nonatomic, readonly) JGORegExpBuilder *(^append)(JGORegExpBuilder *regExpBuilder);
 @property(nonatomic, readonly) JGORegExpBuilder *(^optional)(JGORegExpBuilder *regExpBuilder);
+
+@property(nonatomic, readonly) NSRegularExpression *regularExpression;
 
 extern JGORegExpBuilder *JGORegExpBuilder();
 

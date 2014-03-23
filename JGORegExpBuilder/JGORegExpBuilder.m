@@ -29,7 +29,6 @@
 @property(assign, nonatomic) BOOL capture;
 @property(assign, nonatomic) NSInteger min;
 @property(assign, nonatomic) NSInteger max;
-@property(strong, nonatomic) NSRegularExpressionOptions modifiers;
 
 @property(assign, nonatomic, readonly) NSString *quantityLiteral;
 @property(assign, nonatomic, readonly) NSString *characterLiteral;
@@ -218,6 +217,7 @@ JGORegExpBuilder *JGORegExpBuilder() {
 
 - (JGORegExpBuilder *(^)())endOfInput {
     return ^JGORegExpBuilder *() {
+        [self flushState];
         [self.literal appendString:@"(?:$)"];
         return self;
     };
@@ -230,7 +230,7 @@ JGORegExpBuilder *JGORegExpBuilder() {
     };
 }
 
-- (JGORegExpBuilder *(^)(JGORegExpBuilder *))eitherThis {
+- (JGORegExpBuilder *(^)(JGORegExpBuilder *))eitherBuilder {
     return ^JGORegExpBuilder *(JGORegExpBuilder *regExpBuilder) {
         [self flushState];
         self.either = regExpBuilder.literal;
@@ -254,7 +254,7 @@ JGORegExpBuilder *JGORegExpBuilder() {
     };
 }
 
-- (JGORegExpBuilder *(^)(NSString *))either {
+- (JGORegExpBuilder *(^)(NSString *))eitherString {
     return ^JGORegExpBuilder *(NSString *either) {
         return self.eitherThis(JGORegExpBuilder().exactly(1).of(either));
     };
@@ -266,8 +266,18 @@ JGORegExpBuilder *JGORegExpBuilder() {
     };
 }
 
+- (JGORegExpBuilder *(^)(NSUInteger))exactly {
+    return ^JGORegExpBuilder *(NSUInteger exactly) {
+        [self flushState];
+        self.min = exactly;
+        self.max = exactly;
+        return self;
+    };
+}
+
 - (JGORegExpBuilder *(^)(NSInteger))min {
     return ^JGORegExpBuilder *(NSInteger min) {
+        [self flushState];
         self.min = min;
         return self;
     };
@@ -275,6 +285,7 @@ JGORegExpBuilder *JGORegExpBuilder() {
 
 - (JGORegExpBuilder *(^)(NSInteger))max {
     return ^JGORegExpBuilder *(NSInteger max) {
+        [self flushState];
         self.max = max;
         return self;
     };
@@ -301,8 +312,17 @@ JGORegExpBuilder *JGORegExpBuilder() {
     };
 }
 
+- (JGORegExpBuilder *(^)(JGORegExpBuilder *))ahead {
+    return ^JGORegExpBuilder *(JGORegExpBuilder *ahead) {
+        [self flushState];
+        [self.literal stringByAppendingFormat:@"(?=%@)", ahead.literal];
+        return self;
+    };
+}
+
 - (JGORegExpBuilder *(^)(JGORegExpBuilder *))notAhead {
     return ^JGORegExpBuilder *(JGORegExpBuilder *notAhead) {
+        [self flushState];
         [self.literal appendString:[NSString stringWithFormat:@"?!%@)", notAhead.literal]];
         return self;
     };
@@ -376,6 +396,30 @@ JGORegExpBuilder *JGORegExpBuilder() {
     return @"";
 }
 
+- (NSString *)literal {
+    [self flushState];
+    return [_literal copy];
+}
+
+@dynamic regularExpression;
+
+- (NSRegularExpression *)regularExpression {
+    [self flushState];
+    NSRegularExpressionOptions options;
+    if (self.ignoreCase) {
+        options |= NSRegularExpressionCaseInsensitive;
+    }
+    if (self.isMultiLine) {
+        options |= NSRegularExpressionAnchorsMatchLines;
+    }
+
+    NSError *error;
+    NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern:self.literal
+                                                                            options:options
+                                                                              error:&error];
+    return error ?: regExp;
+}
+
 #pragma mark - Private
 
 - (void)flushState {
@@ -419,34 +463,6 @@ JGORegExpBuilder *JGORegExpBuilder() {
         if (self.source) {
             self.pattern = [NSString stringWithFormat:@"%@%@%@", self.prefixes, self.source, self.suffixes];
         }
-        return self;
-    };
-}
-
-- (JGORegExpBuilder *(^)(unichar))addModifier {
-    return ^JGORegExpBuilder *(unichar modifier) {
-        switch (modifier) {
-            case 'i':
-                self.modifiers |= NSRegularExpressionCaseInsensitive;
-                break;
-            default:
-                break;
-        }
-
-        return self;
-    };
-}
-
-- (JGORegExpBuilder *(^)(unichar))removeModifier {
-    return ^JGORegExpBuilder *(unichar modifier) {
-        switch (modifier) {
-            case 'i':
-                self.modifiers ^= NSRegularExpressionCaseInsensitive;
-                break;
-            default:
-                break;
-        }
-
         return self;
     };
 }
