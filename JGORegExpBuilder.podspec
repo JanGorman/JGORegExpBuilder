@@ -7,7 +7,7 @@
 Pod::Spec.new do |s|
   s.name             = "JGORegExpBuilder"
   s.version          = "0.1.0"
-  s.summary          = "A short description of JGORegExpBuilder."
+  s.summary          = "A delightful regular expression DSL"
   s.description      = <<-DESC
                        An optional longer description of JGORegExpBuilder
 
