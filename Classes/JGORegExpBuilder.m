@@ -28,6 +28,7 @@
 
 @property(assign, nonatomic, readonly) NSString *quantityLiteral;
 @property(assign, nonatomic, readonly) NSString *characterLiteral;
+@property(assign, nonatomic, readonly) NSString *literalValue;
 
 @property(readonly, nonatomic) JGORegExpBuilder *(^add)(NSString *value);
 
@@ -38,6 +39,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        self.literal = [NSMutableString string];
         [self clear];
     }
     return self;
@@ -205,9 +207,7 @@ JGORegExpBuilder *RegExpBuilder() {
 
 - (JGORegExpBuilder *(^)())startOfLine {
     return ^JGORegExpBuilder *() {
-        self.multiLine();
-        self.startOfLine();
-        return self;
+        return self.multiLine().startOfInput();
     };
 }
 
@@ -229,7 +229,7 @@ JGORegExpBuilder *RegExpBuilder() {
 - (JGORegExpBuilder *(^)(JGORegExpBuilder *))eitherBuilder {
     return ^JGORegExpBuilder *(JGORegExpBuilder *regExpBuilder) {
         [self flushState];
-        self.either = regExpBuilder.literal;
+        self.either = regExpBuilder.literalValue;
         return self;
     };
 }
@@ -237,7 +237,7 @@ JGORegExpBuilder *RegExpBuilder() {
 - (JGORegExpBuilder *(^)(JGORegExpBuilder *))orBuilder {
     return ^JGORegExpBuilder *(JGORegExpBuilder *regExpBuilder) {
         NSString *either = self.either;
-        NSString *or = regExpBuilder.literal;
+        NSString *or = regExpBuilder.literalValue;
 
         if ([either isEqualToString:@""]) {
             [self.literal deleteCharactersInRange:NSMakeRange([self.literal length] - 1, 1)];
@@ -311,7 +311,7 @@ JGORegExpBuilder *RegExpBuilder() {
 - (JGORegExpBuilder *(^)(JGORegExpBuilder *))ahead {
     return ^JGORegExpBuilder *(JGORegExpBuilder *ahead) {
         [self flushState];
-        [self.literal stringByAppendingFormat:@"(?=%@)", ahead.literal];
+        [self.literal appendFormat:@"(?=%@)", ahead.literalValue];
         return self;
     };
 }
@@ -319,7 +319,7 @@ JGORegExpBuilder *RegExpBuilder() {
 - (JGORegExpBuilder *(^)(JGORegExpBuilder *))notAhead {
     return ^JGORegExpBuilder *(JGORegExpBuilder *notAhead) {
         [self flushState];
-        [self.literal appendString:[NSString stringWithFormat:@"?!%@)", notAhead.literal]];
+        [self.literal appendString:[NSString stringWithFormat:@"?!%@)", notAhead.literalValue]];
         return self;
     };
 }
@@ -348,7 +348,7 @@ JGORegExpBuilder *RegExpBuilder() {
 - (JGORegExpBuilder *(^)(JGORegExpBuilder *))append {
     return ^JGORegExpBuilder *(JGORegExpBuilder *append) {
         self.exactly(1);
-        self.likeValue = append.literal;
+        self.likeValue = append.literalValue;
         return self;
     };
 }
@@ -356,7 +356,7 @@ JGORegExpBuilder *RegExpBuilder() {
 - (JGORegExpBuilder *(^)(JGORegExpBuilder *))optional {
     return ^JGORegExpBuilder *(JGORegExpBuilder *optional) {
         self.max(1);
-        self.likeValue = optional.literal;
+        self.likeValue = optional.literalValue;
         return self;
     };
 }
@@ -364,8 +364,8 @@ JGORegExpBuilder *RegExpBuilder() {
 @dynamic quantityLiteral;
 
 - (NSString *)quantityLiteral {
-    if (self.minValue -= -1) {
-        if (self.maxValue -= -1) {
+    if (self.minValue != -1) {
+        if (self.maxValue != -1) {
             return [NSString stringWithFormat:@"{%d,%d}", self.minValue, self.maxValue];
         }
         return [NSString stringWithFormat:@"{%d,}", self.minValue];
@@ -392,7 +392,9 @@ JGORegExpBuilder *RegExpBuilder() {
     return @"";
 }
 
-- (NSMutableString *)literal {
+@dynamic literalValue;
+
+- (NSString *)literalValue {
     [self flushState];
     return [_literal copy];
 }
@@ -434,11 +436,11 @@ JGORegExpBuilder *RegExpBuilder() {
             || ![self.notFromValue isEqualToString:@""] || ![self.likeValue isEqualToString:@""]) {
         NSString *captureLiteral = self.capture ? @"" : @"?:";
         NSString *reluctantLiteral = self.isReluctant ? @"?" : @"";
-        [self.literal stringByAppendingFormat:@"(%@(?:%@)%@%@)",
-                                              captureLiteral,
-                                              [self characterLiteral],
-                                              [self quantityLiteral],
-                                              reluctantLiteral];
+        [self.literal appendFormat:@"(%@(?:%@)%@%@)",
+                                   captureLiteral,
+                                   self.characterLiteral,
+                                   self.quantityLiteral,
+                                   reluctantLiteral];
 
         [self clear];
     }

@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "JGORegExpBuilder.h"
 
 @interface ViewController ()
 
@@ -17,10 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    JGORegExpBuilder *builder = RegExpBuilder().startOfLine().exactly(1).of(@"p");
-
-    builder.test(@"padasd");
 }
 
 @end
