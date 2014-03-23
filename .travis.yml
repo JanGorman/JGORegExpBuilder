@@ -1,7 +1,11 @@
 language: objective-c
 before_script:
-  - export LANG=en_US.UTF-8
-  - cd Demo ; pod install ; cd $TRAVIS_BUILD_DIR
-xcode_workspace: Demo/Demo.xcworkspace
-xcode_scheme: Demo
-xcode_sdk: iphonesimulator
+  - brew update
+  - brew install xctool
+  - cd Demo; pod install
+script: xctool -workspace Demo.xcworkspace -scheme Demo test
+#   - export LANG=en_US.UTF-8
+#   - cd Demo ; pod install ; cd $TRAVIS_BUILD_DIR
+# xcode_workspace: Demo/Demo.xcworkspace
+# xcode_scheme: Demo
+# xcode_sdk: iphonesimulator
