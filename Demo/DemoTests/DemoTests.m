@@ -158,4 +158,59 @@
     XCTAssertFalse(builder.test(@"lmq"));
 }
 
+- (void)testLike {
+    JGORegExpBuilder *like = RegExpBuilder().min(1).of(@"p").min(2).of(@"q");
+
+    JGORegExpBuilder *builder = RegExpBuilder().startOfLine().exactly(2).like(like).endOfLine();
+
+    XCTAssertTrue(builder.test(@"pqqpqq"));
+    XCTAssertFalse(builder.test(@"qppqpp"));
+}
+
+- (void)testReluctantly {
+    JGORegExpBuilder *builder = RegExpBuilder()
+            .exactly(2).of(@"p")
+            .min(2).ofAny().reluctantly()
+            .exactly(2).of(@"p");
+
+    NSRegularExpression *regularExpression = builder.regularExpression;
+    NSString *string = @"pprrrrpprrpp";
+    NSTextCheckingResult *result = [regularExpression firstMatchInString:string
+                                                                 options:kNilOptions
+                                                                   range:NSMakeRange(0, [string length])];
+    XCTAssertEqual(8, result.range.length);
+}
+
+- (void)testAhead {
+    JGORegExpBuilder *ahead = RegExpBuilder().exactly(1).of(@"lang");
+    JGORegExpBuilder *builder = RegExpBuilder().exactly(1).of(@"dart").ahead(ahead);
+
+    NSRegularExpression *regularExpression = builder.regularExpression;
+    NSString *string = @"dartlang";
+    NSArray *result = [regularExpression matchesInString:string
+                                                 options:kNilOptions
+                                                   range:NSMakeRange(0, [string length])];
+    XCTAssertTrue([result count] == 1);
+    NSTextCheckingResult *checkingResult = [result firstObject];
+    XCTAssertTrue([@"dart" isEqualToString:[string substringWithRange:checkingResult.range]]);
+
+    XCTAssertFalse(builder.test(@"dartqw"));
+}
+
+- (void)testAsGroup {
+    JGORegExpBuilder *builder = RegExpBuilder()
+            .min(1).max(3).of(@"p")
+            .exactly(1).of(@"dart").asGroup()
+            .exactly(1).from(@[@"p", @"q", @"r"]);
+
+    NSRegularExpression *regularExpression = builder.regularExpression;
+    NSString *string = @"pdartq";
+    NSArray *result = [regularExpression matchesInString:string
+                                                 options:kNilOptions
+                                                   range:NSMakeRange(0, [string length])];
+    XCTAssertTrue([result count] == 1);
+    NSTextCheckingResult *checkingResult = [result firstObject];
+    XCTAssertTrue([@"dart" isEqualToString:[string substringWithRange:[checkingResult rangeAtIndex:1]]]);
+}
+
 @end

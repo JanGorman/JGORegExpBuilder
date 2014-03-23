@@ -322,6 +322,20 @@ JGORegExpBuilder *RegExpBuilder() {
     };
 }
 
+- (JGORegExpBuilder *(^)(JGORegExpBuilder *))like {
+    return ^JGORegExpBuilder *(JGORegExpBuilder *like) {
+        self.likeValue = like.literalValue;
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)())reluctantly {
+    return ^JGORegExpBuilder *() {
+        self.reluctant = YES;
+        return self;
+    };
+}
+
 - (JGORegExpBuilder *(^)(JGORegExpBuilder *))ahead {
     return ^JGORegExpBuilder *(JGORegExpBuilder *ahead) {
         [self flushState];
