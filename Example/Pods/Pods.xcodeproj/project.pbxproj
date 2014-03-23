@@ -7,182 +7,183 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05E5118710B741F3818A23DD /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CF4DC3103C498EACAD1055 /* Pods-dummy.m */; };
-		754F6A5342CA4C8FB6281A91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC11863E32914E68814F7F87 /* Foundation.framework */; };
-		78D35913CA45474E98231DA7 /* libPods-JGORegExpBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAF41E7908F41A488BBB042 /* libPods-JGORegExpBuilder.a */; };
-		C0D8B108916149F38A90EC96 /* Pods-JGORegExpBuilder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAEE6AE02D14876AC7E2F6B /* Pods-JGORegExpBuilder-dummy.m */; };
-		D8C9EB1D6084475686F97A53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC11863E32914E68814F7F87 /* Foundation.framework */; };
+		255E0542893F41F581ECC03F /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5F0C03DFCC4973BB217CC0 /* Pods-dummy.m */; };
+		37B5D82CC6764D3AB9190255 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B2382330064ED3A5CD3D67 /* Foundation.framework */; };
+		50904276E4624317A255D941 /* JGORegExpBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AA7709352040FC886D5784 /* JGORegExpBuilder.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		67281D97D39B40C3A9106FDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B2382330064ED3A5CD3D67 /* Foundation.framework */; };
+		D104C5B2C23D46E8911C9761 /* JGORegExpBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = E33C004666A94113842DE341 /* JGORegExpBuilder.h */; };
+		D350339E1A23477CA1A47E15 /* libPods-JGORegExpBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 534FCDBBCEEE4A649AD358DC /* libPods-JGORegExpBuilder.a */; };
+		F2D5A9BA302F4683AE46D218 /* Pods-JGORegExpBuilder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D415CF93B04114934B9392 /* Pods-JGORegExpBuilder-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		86CE66681D764ED3BED068E1 /* PBXContainerItemProxy */ = {
+		A26FAD8ACE3B4CA28DF57D73 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5698652206F54C5E96E789E5 /* Project object */;
+			containerPortal = 128C5A7B32D944A1B0DF5547 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C0A67BF844FB4E78A041D628;
+			remoteGlobalIDString = 1813D6B65B154041A9194DED;
 			remoteInfo = "Pods-JGORegExpBuilder";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14CF4DC3103C498EACAD1055 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		194A02F137924911A69620E2 /* Pods-JGORegExpBuilder.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JGORegExpBuilder.xcconfig"; sourceTree = "<group>"; };
-		1EAF41E7908F41A488BBB042 /* libPods-JGORegExpBuilder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JGORegExpBuilder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D470423966341B7A238694A /* Pods-JGORegExpBuilder-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JGORegExpBuilder-prefix.pch"; sourceTree = "<group>"; };
-		2FDC75E272D0463F8DF109DB /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		38B486BFACE3430B81A000CB /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		4854D4B7B36F45759F378774 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CAEE6AE02D14876AC7E2F6B /* Pods-JGORegExpBuilder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JGORegExpBuilder-dummy.m"; sourceTree = "<group>"; };
-		86F1B147F2B64A91B3C8EFA3 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		8B2A97C1ED824B268FBB962C /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		90DDC604F4F64DE783A35C0D /* Pods-JGORegExpBuilder-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JGORegExpBuilder-Private.xcconfig"; sourceTree = "<group>"; };
-		A31501E1BB114749A07577FF /* Resources */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
-		B28E863948AB49C4A0C56AF8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.xcconfig; sourceTree = "<group>"; };
-		BC11863E32914E68814F7F87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CDA72428D696438790BD0494 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1829D9464E6A45FBAB908E35 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		1CB6767F5FAF4B51B616B922 /* Resources */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		2547F22D92074250B8450EEB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.xcconfig; sourceTree = "<group>"; };
+		534FCDBBCEEE4A649AD358DC /* libPods-JGORegExpBuilder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JGORegExpBuilder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58AA7709352040FC886D5784 /* JGORegExpBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGORegExpBuilder.m; path = Classes/JGORegExpBuilder.m; sourceTree = "<group>"; };
+		66B2382330064ED3A5CD3D67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		683EC0FC264547599B72566A /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		692CA0EC72BE4B3AAA3735E0 /* Pods-JGORegExpBuilder.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JGORegExpBuilder.xcconfig"; sourceTree = "<group>"; };
+		6D5F0C03DFCC4973BB217CC0 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		6DA43A36F4704D308C7C433A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		782D2BFC440D41C1A678D7C4 /* Pods-JGORegExpBuilder-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JGORegExpBuilder-prefix.pch"; sourceTree = "<group>"; };
+		78D415CF93B04114934B9392 /* Pods-JGORegExpBuilder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JGORegExpBuilder-dummy.m"; sourceTree = "<group>"; };
+		88C1AE518C2848EA8E7C3396 /* Pods-JGORegExpBuilder-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JGORegExpBuilder-Private.xcconfig"; sourceTree = "<group>"; };
+		E257899C4B374FBAA7D2638A /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E29C9254B41A457C8979A6F4 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		E33C004666A94113842DE341 /* JGORegExpBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGORegExpBuilder.h; path = Classes/JGORegExpBuilder.h; sourceTree = "<group>"; };
+		F0D4BBEBF03C4C95A5FB0BCE /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		ACE79E749FD64988BC5981B5 /* Frameworks */ = {
+		4CB70DE371104B12851E8F1B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8C9EB1D6084475686F97A53 /* Foundation.framework in Frameworks */,
-				78D35913CA45474E98231DA7 /* libPods-JGORegExpBuilder.a in Frameworks */,
+				37B5D82CC6764D3AB9190255 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD6F5BFAA60C47048BA28A5D /* Frameworks */ = {
+		BAB8B46B7C6E451E84982AC3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				754F6A5342CA4C8FB6281A91 /* Foundation.framework in Frameworks */,
+				67281D97D39B40C3A9106FDE /* Foundation.framework in Frameworks */,
+				D350339E1A23477CA1A47E15 /* libPods-JGORegExpBuilder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		244B26741DA6458B857BC905 /* Development Pods */ = {
+		056F77C3F1DC432DBB815B2D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D4C12269F85E48CCB1832675 /* JGORegExpBuilder */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		2C33E32F156D40B0A41DF090 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				194A02F137924911A69620E2 /* Pods-JGORegExpBuilder.xcconfig */,
-				90DDC604F4F64DE783A35C0D /* Pods-JGORegExpBuilder-Private.xcconfig */,
-				7CAEE6AE02D14876AC7E2F6B /* Pods-JGORegExpBuilder-dummy.m */,
-				2D470423966341B7A238694A /* Pods-JGORegExpBuilder-prefix.pch */,
-			);
-			name = "Support Files";
-			sourceTree = SOURCE_ROOT;
-		};
-		4D3497A4B8C74D38BF41B5E4 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A31501E1BB114749A07577FF /* Resources */,
+				1CB6767F5FAF4B51B616B922 /* Resources */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		7C732455BBE34687B99A8E99 /* iOS */ = {
+		24B52159F0164FB9A9DCDC76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC11863E32914E68814F7F87 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		89D361B3DA19426D9E744A9B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4854D4B7B36F45759F378774 /* libPods.a */,
-				1EAF41E7908F41A488BBB042 /* libPods-JGORegExpBuilder.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9B67D92B1E51477CB965B4D4 = {
-			isa = PBXGroup;
-			children = (
-				CDA72428D696438790BD0494 /* Podfile */,
-				244B26741DA6458B857BC905 /* Development Pods */,
-				9FDCC96D38F84BDEB2B9B9E9 /* Frameworks */,
-				89D361B3DA19426D9E744A9B /* Products */,
-				A1C47203CDAC4B58B150B7C2 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		9FDCC96D38F84BDEB2B9B9E9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7C732455BBE34687B99A8E99 /* iOS */,
+				49464EF1EFBC491983200437 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A1C47203CDAC4B58B150B7C2 /* Targets Support Files */ = {
+		49464EF1EFBC491983200437 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D20F4E59AC994F61890B34CE /* Pods */,
+				66B2382330064ED3A5CD3D67 /* Foundation.framework */,
 			);
-			name = "Targets Support Files";
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		D20F4E59AC994F61890B34CE /* Pods */ = {
+		4CA89BDC70D34C52B2F90232 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B28E863948AB49C4A0C56AF8 /* Pods.xcconfig */,
-				2FDC75E272D0463F8DF109DB /* Pods-acknowledgements.markdown */,
-				86F1B147F2B64A91B3C8EFA3 /* Pods-acknowledgements.plist */,
-				14CF4DC3103C498EACAD1055 /* Pods-dummy.m */,
-				38B486BFACE3430B81A000CB /* Pods-environment.h */,
-				8B2A97C1ED824B268FBB962C /* Pods-resources.sh */,
+				6A215BCB78234AADB27E8B36 /* JGORegExpBuilder */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		4DD5E35B61454CB29CFCECF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2547F22D92074250B8450EEB /* Pods.xcconfig */,
+				E257899C4B374FBAA7D2638A /* Pods-acknowledgements.markdown */,
+				E29C9254B41A457C8979A6F4 /* Pods-acknowledgements.plist */,
+				6D5F0C03DFCC4973BB217CC0 /* Pods-dummy.m */,
+				1829D9464E6A45FBAB908E35 /* Pods-environment.h */,
+				683EC0FC264547599B72566A /* Pods-resources.sh */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D4C12269F85E48CCB1832675 /* JGORegExpBuilder */ = {
+		570A16F549F5439EA74FBC6F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4D3497A4B8C74D38BF41B5E4 /* Resources */,
-				2C33E32F156D40B0A41DF090 /* Support Files */,
+				6DA43A36F4704D308C7C433A /* libPods.a */,
+				534FCDBBCEEE4A649AD358DC /* libPods-JGORegExpBuilder.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A215BCB78234AADB27E8B36 /* JGORegExpBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				E33C004666A94113842DE341 /* JGORegExpBuilder.h */,
+				58AA7709352040FC886D5784 /* JGORegExpBuilder.m */,
+				056F77C3F1DC432DBB815B2D /* Resources */,
+				FB25B53A1F8B4E0F81663697 /* Support Files */,
 			);
 			name = JGORegExpBuilder;
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		ACF9CB82729A42C4BEA4A186 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DD5E35B61454CB29CFCECF0 /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D346A62E7F9B4095B45D34AB = {
+			isa = PBXGroup;
+			children = (
+				F0D4BBEBF03C4C95A5FB0BCE /* Podfile */,
+				4CA89BDC70D34C52B2F90232 /* Development Pods */,
+				24B52159F0164FB9A9DCDC76 /* Frameworks */,
+				570A16F549F5439EA74FBC6F /* Products */,
+				ACF9CB82729A42C4BEA4A186 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		FB25B53A1F8B4E0F81663697 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				692CA0EC72BE4B3AAA3735E0 /* Pods-JGORegExpBuilder.xcconfig */,
+				88C1AE518C2848EA8E7C3396 /* Pods-JGORegExpBuilder-Private.xcconfig */,
+				78D415CF93B04114934B9392 /* Pods-JGORegExpBuilder-dummy.m */,
+				782D2BFC440D41C1A678D7C4 /* Pods-JGORegExpBuilder-prefix.pch */,
+			);
+			name = "Support Files";
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
-/* Begin PBXNativeTarget section */
-		74E516A2F1504C179086F639 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EC6EED4481034F219CAEB2BE /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				47F7B391AF8F49F083E83754 /* Sources */,
-				ACE79E749FD64988BC5981B5 /* Frameworks */,
+/* Begin PBXHeadersBuildPhase section */
+		39490905738F448E836B93AD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D104C5B2C23D46E8911C9761 /* JGORegExpBuilder.h in Headers */,
 			);
-			buildRules = (
-			);
-			dependencies = (
-				A310923F01CA4A2BAE911FE6 /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = 4854D4B7B36F45759F378774 /* libPods.a */;
-			productType = "com.apple.product-type.library.static";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C0A67BF844FB4E78A041D628 /* Pods-JGORegExpBuilder */ = {
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1813D6B65B154041A9194DED /* Pods-JGORegExpBuilder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94F40C5D5F114A69984525C4 /* Build configuration list for PBXNativeTarget "Pods-JGORegExpBuilder" */;
+			buildConfigurationList = 64B35B8745084A2D96775474 /* Build configuration list for PBXNativeTarget "Pods-JGORegExpBuilder" */;
 			buildPhases = (
-				A4AE4FB6091147C1A8B76572 /* Sources */,
-				FD6F5BFAA60C47048BA28A5D /* Frameworks */,
+				C47871AA97E14607A320F47E /* Sources */,
+				4CB70DE371104B12851E8F1B /* Frameworks */,
+				39490905738F448E836B93AD /* Headers */,
 			);
 			buildRules = (
 			);
@@ -190,66 +191,114 @@
 			);
 			name = "Pods-JGORegExpBuilder";
 			productName = "Pods-JGORegExpBuilder";
-			productReference = 1EAF41E7908F41A488BBB042 /* libPods-JGORegExpBuilder.a */;
+			productReference = 534FCDBBCEEE4A649AD358DC /* libPods-JGORegExpBuilder.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		BB293FA27AF44E5582B2988A /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0054E23C12A7452CA504A5CB /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				F1E5218386E54A149AB74BA7 /* Sources */,
+				BAB8B46B7C6E451E84982AC3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B77AA2099534BAA88A640BA /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 6DA43A36F4704D308C7C433A /* libPods.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5698652206F54C5E96E789E5 /* Project object */ = {
+		128C5A7B32D944A1B0DF5547 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
 			};
-			buildConfigurationList = 62CB77C75A9F45F18E25C662 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 83D447BA92A449E68C8858E5 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 9B67D92B1E51477CB965B4D4;
-			productRefGroup = 89D361B3DA19426D9E744A9B /* Products */;
+			mainGroup = D346A62E7F9B4095B45D34AB;
+			productRefGroup = 570A16F549F5439EA74FBC6F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				74E516A2F1504C179086F639 /* Pods */,
-				C0A67BF844FB4E78A041D628 /* Pods-JGORegExpBuilder */,
+				BB293FA27AF44E5582B2988A /* Pods */,
+				1813D6B65B154041A9194DED /* Pods-JGORegExpBuilder */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		47F7B391AF8F49F083E83754 /* Sources */ = {
+		C47871AA97E14607A320F47E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05E5118710B741F3818A23DD /* Pods-dummy.m in Sources */,
+				50904276E4624317A255D941 /* JGORegExpBuilder.m in Sources */,
+				F2D5A9BA302F4683AE46D218 /* Pods-JGORegExpBuilder-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4AE4FB6091147C1A8B76572 /* Sources */ = {
+		F1E5218386E54A149AB74BA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0D8B108916149F38A90EC96 /* Pods-JGORegExpBuilder-dummy.m in Sources */,
+				255E0542893F41F581ECC03F /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A310923F01CA4A2BAE911FE6 /* PBXTargetDependency */ = {
+		2B77AA2099534BAA88A640BA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C0A67BF844FB4E78A041D628 /* Pods-JGORegExpBuilder */;
-			targetProxy = 86CE66681D764ED3BED068E1 /* PBXContainerItemProxy */;
+			target = 1813D6B65B154041A9194DED /* Pods-JGORegExpBuilder */;
+			targetProxy = A26FAD8ACE3B4CA28DF57D73 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		25FCE1D2E87C4E7C94D46EDB /* Debug */ = {
+		2B48937D91B74A78B4911720 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B28E863948AB49C4A0C56AF8 /* Pods.xcconfig */;
+			baseConfigurationReference = 88C1AE518C2848EA8E7C3396 /* Pods-JGORegExpBuilder-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-JGORegExpBuilder-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E23C85D00EF4EB48EEC70B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2547F22D92074250B8450EEB /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
@@ -274,7 +323,64 @@
 			};
 			name = Debug;
 		};
-		3604B0AA00224C70A820F003 /* Debug */ = {
+		5EEF6BC6F0614CC09695EF0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88C1AE518C2848EA8E7C3396 /* Pods-JGORegExpBuilder-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-JGORegExpBuilder-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9741AF12443A4FC8A7767959 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2547F22D92074250B8450EEB /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6B971C065654A1684E220D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -310,94 +416,7 @@
 			};
 			name = Debug;
 		};
-		5AEBD2D5C82B4B82933FD5F0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B28E863948AB49C4A0C56AF8 /* Pods.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		6D2D1643B8154413A70FC14C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90DDC604F4F64DE783A35C0D /* Pods-JGORegExpBuilder-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pods-JGORegExpBuilder-prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		86A984493B4F4394B37F0F05 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90DDC604F4F64DE783A35C0D /* Pods-JGORegExpBuilder-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pods-JGORegExpBuilder-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B6BEDFC6B9524BCC8509FB66 /* Release */ = {
+		C3DBED80EAC14BC181018452 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -430,34 +449,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		62CB77C75A9F45F18E25C662 /* Build configuration list for PBXProject "Pods" */ = {
+		0054E23C12A7452CA504A5CB /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3604B0AA00224C70A820F003 /* Debug */,
-				B6BEDFC6B9524BCC8509FB66 /* Release */,
+				5E23C85D00EF4EB48EEC70B2 /* Debug */,
+				9741AF12443A4FC8A7767959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94F40C5D5F114A69984525C4 /* Build configuration list for PBXNativeTarget "Pods-JGORegExpBuilder" */ = {
+		64B35B8745084A2D96775474 /* Build configuration list for PBXNativeTarget "Pods-JGORegExpBuilder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				86A984493B4F4394B37F0F05 /* Debug */,
-				6D2D1643B8154413A70FC14C /* Release */,
+				5EEF6BC6F0614CC09695EF0E /* Debug */,
+				2B48937D91B74A78B4911720 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC6EED4481034F219CAEB2BE /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		83D447BA92A449E68C8858E5 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				25FCE1D2E87C4E7C94D46EDB /* Debug */,
-				5AEBD2D5C82B4B82933FD5F0 /* Release */,
+				B6B971C065654A1684E220D0 /* Debug */,
+				C3DBED80EAC14BC181018452 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5698652206F54C5E96E789E5 /* Project object */;
+	rootObject = 128C5A7B32D944A1B0DF5547 /* Project object */;
 }
