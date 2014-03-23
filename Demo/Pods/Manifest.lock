@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../JGORegExpBuilder.podspec
 
 SPEC CHECKSUMS:
-  JGORegExpBuilder: e8a0d89265d675fef23b2815162434180b2cb648
+  JGORegExpBuilder: ff04f085adbfdad80e3ed53181a6173f28962f54
 
 COCOAPODS: 0.29.0

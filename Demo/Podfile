@@ -1,7 +1,11 @@
+platform :ios
+
 pod "JGORegExpBuilder", :path => "../JGORegExpBuilder.podspec"
 
-# target "Example" do
+# link_with 'Demo'
+
+# target "Demo" do
 # end
 # 
-# target "ExampleTests" do
+# target "DemoTests" do
 # end

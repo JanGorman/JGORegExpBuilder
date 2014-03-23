@@ -82,7 +82,7 @@ JGORegExpBuilder *RegExpBuilder() {
 - (JGORegExpBuilder *(^)(NSString *))anythingBut {
     return ^JGORegExpBuilder *(NSString *anythingBut) {
         if ([anythingBut length] == 1) {
-            return self.max(1).notFrom([NSString stringWithFormat:@"%C", [anythingBut characterAtIndex:0]]);
+            return self.max(1).notFrom(@[[anythingBut substringToIndex:1]]);
         }
         self.notAhead(RegExpBuilder().exactly(1).of(anythingBut));
         return self.min(0).ofAny();
@@ -98,7 +98,7 @@ JGORegExpBuilder *RegExpBuilder() {
 - (JGORegExpBuilder *(^)(NSString *))somethingBut {
     return ^JGORegExpBuilder *(NSString *somethingBut) {
         if ([somethingBut length] == 1) {
-            return self.exactly(1).notFrom([NSString stringWithFormat:@"%C", [somethingBut characterAtIndex:0]]);
+            return self.exactly(1).notFrom(@[[somethingBut substringToIndex:1]]);
         }
         self.notAhead(RegExpBuilder().exactly(1).of(somethingBut));
         return self.min(1).ofAny();
