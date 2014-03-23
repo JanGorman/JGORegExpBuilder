@@ -4,5 +4,6 @@ before_script:
   - brew update
   - brew unlink xctool
   - brew install xctool
+  - export LANG=en_US.UTF-8
   - cd Demo ; pod install
 script: xctool -workspace Demo.xcworkspace -scheme Demo test
