@@ -129,7 +129,7 @@ JGORegExpBuilder *JGORegExpBuilder() {
             return self.exactly(1).of(@"\\s");
         }
         self.like = @"\\s";
-        return this;
+        return self;
     };
 }
 
@@ -212,7 +212,7 @@ JGORegExpBuilder *JGORegExpBuilder() {
 - (JGORegExpBuilder *(^)())startOfLine {
     return ^JGORegExpBuilder *() {
         self.multiLine();
-        return self;
+        return self.startOfLine();
     };
 }
 
@@ -220,6 +220,49 @@ JGORegExpBuilder *JGORegExpBuilder() {
     return ^JGORegExpBuilder *() {
         [self.literal appendString:@"(?:$)"];
         return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)())endOfLine {
+    return ^JGORegExpBuilder *() {
+        self.multiLine();
+        return self.endOfInput();
+    };
+}
+
+- (JGORegExpBuilder *(^)(JGORegExpBuilder *))eitherThis {
+    return ^JGORegExpBuilder *(JGORegExpBuilder *regExpBuilder) {
+        [self flushState];
+        self.either = regExpBuilder.literal;
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)(JGORegExpBuilder *))orBuilder {
+    return ^JGORegExpBuilder *(JGORegExpBuilder *regExpBuilder) {
+        NSString *either = self.either;
+        NSString *or = regExpBuilder.literal;
+
+        if ([either isEqualToString:@""]) {
+            [self.literal deleteCharactersInRange:NSMakeRange([self.literal length] - 1, 1)];
+            [self.literal appendFormat:@"|(?:%@))", or];
+        } else {
+            [self.literal appendFormat:@"(?:(?:%@)|(?:%@))", either, or];
+        }
+        [self clear];
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)(NSString *))either {
+    return ^JGORegExpBuilder *(NSString *either) {
+        return self.eitherThis(JGORegExpBuilder().exactly(1).of(either));
+    };
+}
+
+- (JGORegExpBuilder *(^)(NSString *))orString {
+    return ^JGORegExpBuilder *(NSString *orString) {
+        return self.orBuilder(JGORegExpBuilder().exactly(1).of(orString));
     };
 }
 
@@ -261,13 +304,44 @@ JGORegExpBuilder *JGORegExpBuilder() {
 - (JGORegExpBuilder *(^)(JGORegExpBuilder *))notAhead {
     return ^JGORegExpBuilder *(JGORegExpBuilder *notAhead) {
         [self.literal appendString:[NSString stringWithFormat:@"?!%@)", notAhead.literal]];
-        return this;
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)())asGroup {
+    return ^JGORegExpBuilder *() {
+        self.capture = YES;
+        return self;
     };
 }
 
 - (JGORegExpBuilder *(^)())ignoreCase {
     return ^JGORegExpBuilder *() {
-        return self.addModifier('i');
+        self.ignoreCase = YES;
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)())multiLine {
+    return ^JGORegExpBuilder *() {
+        self.multiLine = YES;
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)(JGORegExpBuilder *))append {
+    return ^JGORegExpBuilder *(JGORegExpBuilder *append) {
+        self.exactly(1);
+        self.like = append.literal;
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)(JGORegExpBuilder *))optional {
+    return ^JGORegExpBuilder *(JGORegExpBuilder *optional) {
+        self.max(1);
+        self.like = optional.literal;
+        return self;
     };
 }
 

@@ -35,6 +35,7 @@
 @property(nonatomic, readonly) JGORegExpBuilder *(^startOfLine)();
 @property(nonatomic, readonly) JGORegExpBuilder *(^endOfInput)();
 @property(nonatomic, readonly) JGORegExpBuilder *(^endOfLine)();
+// TODO naming
 @property(nonatomic, readonly) JGORegExpBuilder *(^eitherThis)(JGORegExpBuilder *regExpBuilder);
 @property(nonatomic, readonly) JGORegExpBuilder *(^orBuilder)(JGORegExpBuilder *regExpBuilder);
 @property(nonatomic, readonly) JGORegExpBuilder *(^either)(NSString *either);
