@@ -1,14 +1,20 @@
 PODS:
+  - Expecta (0.3.0)
   - JGORegExpBuilder (0.1.0)
+  - Specta (0.2.1)
 
 DEPENDENCIES:
+  - Expecta
   - JGORegExpBuilder (from `../JGORegExpBuilder.podspec`)
+  - Specta
 
 EXTERNAL SOURCES:
   JGORegExpBuilder:
     :path: ../JGORegExpBuilder.podspec
 
 SPEC CHECKSUMS:
+  Expecta: 322f1dc42610106a5ba9871b4924cf1635d80833
   JGORegExpBuilder: ff04f085adbfdad80e3ed53181a6173f28962f54
+  Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
 
 COCOAPODS: 0.29.0

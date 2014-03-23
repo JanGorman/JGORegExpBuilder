@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "JGORegExpBuilder.h"
 
 @interface DemoTests : XCTestCase
 
@@ -23,8 +24,10 @@
 }
 
 - (void)testStartOfLine {
+    JGORegExpBuilder *builder = RegExpBuilder().startOfLine().exactly(1).of(@"p");
 
-//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssertTrue(builder.test(@"p"));
+    XCTAssertFalse(builder.test(@"qp"));
 }
 
 @end

@@ -206,7 +206,8 @@ JGORegExpBuilder *RegExpBuilder() {
 - (JGORegExpBuilder *(^)())startOfLine {
     return ^JGORegExpBuilder *() {
         self.multiLine();
-        return self.startOfLine();
+        self.startOfLine();
+        return self;
     };
 }
 
@@ -394,6 +395,16 @@ JGORegExpBuilder *RegExpBuilder() {
 - (NSMutableString *)literal {
     [self flushState];
     return [_literal copy];
+}
+
+- (BOOL(^)(NSString *))test {
+    return ^BOOL(NSString *string) {
+        NSRegularExpression *regExp = self.regularExpression;
+        NSUInteger matches = [regExp numberOfMatchesInString:string
+                                                     options:kNilOptions
+                                                       range:NSMakeRange(0, [string length])];
+        return matches > 0;
+    };
 }
 
 @dynamic regularExpression;

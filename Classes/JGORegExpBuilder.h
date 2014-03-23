@@ -62,6 +62,8 @@
 @property(nonatomic, readonly) JGORegExpBuilder *(^append)(JGORegExpBuilder *regExpBuilder);
 @property(nonatomic, readonly) JGORegExpBuilder *(^optional)(JGORegExpBuilder *regExpBuilder);
 
+@property(nonatomic, readonly) BOOL(^test)(NSString *string);
+
 @property(nonatomic, readonly) NSRegularExpression *regularExpression;
 
 extern JGORegExpBuilder *RegExpBuilder();
