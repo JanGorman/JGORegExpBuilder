@@ -87,7 +87,75 @@
 }
 
 - (void)testMin {
+    JGORegExpBuilder *builder = RegExpBuilder().startOfLine().min(2).of(@"p").endOfLine();
 
+    XCTAssertTrue(builder.test(@"pp"));
+    XCTAssertTrue(builder.test(@"ppp"));
+    XCTAssertTrue(builder.test(@"ppppppp"));
+    XCTAssertFalse(builder.test(@"p"));
+}
+
+- (void)testMax {
+    JGORegExpBuilder *builder = RegExpBuilder().startOfLine().max(3).of(@"p").endOfLine();
+
+    XCTAssertTrue(builder.test(@"p"));
+    XCTAssertTrue(builder.test(@"pp"));
+    XCTAssertTrue(builder.test(@"ppp"));
+    XCTAssertFalse(builder.test(@"ppppppp"));
+}
+
+- (void)testMinMax {
+    JGORegExpBuilder *builder = RegExpBuilder().startOfLine().min(3).max(7).of(@"p").endOfLine();
+
+    XCTAssertTrue(builder.test(@"ppp"));
+    XCTAssertTrue(builder.test(@"ppppp"));
+    XCTAssertTrue(builder.test(@"ppppppp"));
+    XCTAssertFalse(builder.test(@"pppppppppp"));
+    XCTAssertFalse(builder.test(@"p"));
+    XCTAssertFalse(builder.test(@"pp"));
+}
+
+- (void)testOf {
+    JGORegExpBuilder *builder = RegExpBuilder().startOfLine().exactly(2).of(@"p p p ").endOfLine();
+
+    XCTAssertTrue(builder.test(@"p p p p p p "));
+    XCTAssertFalse(builder.test(@"p p p p p pp"));
+}
+
+- (void)testOfAny {
+    JGORegExpBuilder *builder = RegExpBuilder().startOfLine().exactly(3).ofAny().endOfLine();
+
+    XCTAssertTrue(builder.test(@"abc"));
+    XCTAssertFalse(builder.test(@"abcd"));
+}
+
+- (void)testOfGroup {
+    JGORegExpBuilder *builder = RegExpBuilder()
+            .startOfLine()
+            .exactly(3).of(@"p").asGroup()
+            .exactly(1).of(@"q")
+            .exactly(1).ofGroup(1);
+
+    XCTAssertTrue(builder.test(@"pppqppp"));
+}
+
+- (void)testFrom {
+    NSArray *letters = @[@"p", @"q", @"r"];
+    JGORegExpBuilder *builder = RegExpBuilder().startOfLine().exactly(3).from(letters).endOfLine();
+
+    XCTAssertTrue(builder.test(@"ppp"));
+    XCTAssertTrue(builder.test(@"qqq"));
+    XCTAssertTrue(builder.test(@"rrr"));
+    XCTAssertTrue(builder.test(@"pqr"));
+    XCTAssertFalse(builder.test(@"pyy"));
+}
+
+- (void)testNotFrom {
+    NSArray *letters = @[@"p", @"q", @"r"];
+    JGORegExpBuilder *builder = RegExpBuilder().startOfLine().exactly(3).notFrom(letters).endOfLine();
+
+    XCTAssertTrue(builder.test(@"lmn"));
+    XCTAssertFalse(builder.test(@"lmq"));
 }
 
 @end

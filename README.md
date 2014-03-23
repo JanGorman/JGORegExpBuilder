@@ -1,5 +1,6 @@
 # JGORegExpBuilder
 
+[![Build Status](https://travis-ci.org/JanGorman/JGORegExpBuilder.png)](https://travis-ci.org/JanGorman/JGORegExpBuilder)
 [![Version](http://cocoapod-badges.herokuapp.com/v/JGORegExpBuilder/badge.png)](http://cocoadocs.org/docsets/JGORegExpBuilder)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/JGORegExpBuilder/badge.png)](http://cocoadocs.org/docsets/JGORegExpBuilder)
 

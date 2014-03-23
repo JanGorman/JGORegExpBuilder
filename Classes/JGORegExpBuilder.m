@@ -301,9 +301,23 @@ JGORegExpBuilder *RegExpBuilder() {
     };
 }
 
+- (JGORegExpBuilder *(^)(NSUInteger))ofGroup {
+    return ^JGORegExpBuilder *(NSUInteger group) {
+        self.ofGroupValue = group;
+        return self;
+    };
+}
+
 - (JGORegExpBuilder *(^)(NSArray *))from {
     return ^JGORegExpBuilder *(NSArray *from) {
         self.fromValue = [self sanitize:[from componentsJoinedByString:@""]];
+        return self;
+    };
+}
+
+- (JGORegExpBuilder *(^)(NSArray *))notFrom {
+    return ^JGORegExpBuilder *(NSArray *notFrom) {
+        self.notFromValue = [self sanitize:[notFrom componentsJoinedByString:@""]];
         return self;
     };
 }
