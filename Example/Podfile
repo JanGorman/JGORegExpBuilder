@@ -1,0 +1,7 @@
+pod "JGORegExpBuilder", :path => "../JGORegExpBuilder.podspec"
+
+target "Demo" do
+end
+
+target "DemoTests" do
+end
