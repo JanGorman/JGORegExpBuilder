@@ -6,7 +6,7 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface JGORegExpBuilder : NSObject
 
@@ -39,10 +39,10 @@
 @property(nonatomic, readonly) JGORegExpBuilder *(^orBuilder)(JGORegExpBuilder *regExpBuilder);
 @property(nonatomic, readonly) JGORegExpBuilder *(^eitherString)(NSString *either);
 @property(nonatomic, readonly) JGORegExpBuilder *(^orString)(NSString *orThat);
-@property(nonatomic, readonly) JGORegExpBuilder *(^neither)(JGORegExpBuilder *regExpBuilder);
-@property(nonatomic, readonly) JGORegExpBuilder *(^nor)(JGORegExpBuilder *regExpBuilder);
-@property(nonatomic, readonly) JGORegExpBuilder *(^neither)(NSString *neither);
-@property(nonatomic, readonly) JGORegExpBuilder *(^nor)(NSString *nor);
+@property(nonatomic, readonly) JGORegExpBuilder *(^neitherBuilder)(JGORegExpBuilder *regExpBuilder);
+@property(nonatomic, readonly) JGORegExpBuilder *(^norBuilder)(JGORegExpBuilder *regExpBuilder);
+@property(nonatomic, readonly) JGORegExpBuilder *(^neitherString)(NSString *neither);
+@property(nonatomic, readonly) JGORegExpBuilder *(^norString)(NSString *nor);
 @property(nonatomic, readonly) JGORegExpBuilder *(^exactly)(NSUInteger exactly);
 @property(nonatomic, readonly) JGORegExpBuilder *(^min)(NSUInteger exactly);
 @property(nonatomic, readonly) JGORegExpBuilder *(^max)(NSUInteger exactly);
@@ -64,6 +64,6 @@
 
 @property(nonatomic, readonly) NSRegularExpression *regularExpression;
 
-extern JGORegExpBuilder *JGORegExpBuilder();
+extern JGORegExpBuilder *RegExpBuilder();
 
 @end
