@@ -1,6 +1,7 @@
 language: objective-c
 before_script:
   - brew update
+  - brew unlink xctool
   - brew install xctool
   - cd Demo; pod install
 script: xctool -workspace Demo.xcworkspace -scheme Demo test
