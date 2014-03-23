@@ -2,10 +2,10 @@ Pod::Spec.new do |s|
   s.name             = "JGORegExpBuilder"
   s.version          = "1.0.0"
   s.summary          = "A delightful regular expression DSL"
-  s.homepage         = "http://github.com/JanGorman/JGORegExpBuilder"
+  s.homepage         = "https://github.com/JanGorman/JGORegExpBuilder"
   s.license          = 'MIT'
   s.author           = { "Jan Gorman" => "gorman.jan@gmail.com" }
-  s.source           = { :git => "http://github.com/JanGorman/JGORegExpBuilder.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/JanGorman/JGORegExpBuilder.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/JanGorman'
 
   s.requires_arc = true
