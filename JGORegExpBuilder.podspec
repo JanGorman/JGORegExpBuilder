@@ -7,7 +7,6 @@ Pod::Spec.new do |s|
   s.author           = { "Jan Gorman" => "gorman.jan@gmail.com" }
   s.source           = { :git => "https://github.com/JanGorman/JGORegExpBuilder.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/JanGorman'
-
-  s.requires_arc = true
-  s.source_files = 'Classes'
+  s.source_files     = 'JGORegExpBuilder/JGORegExpBuilder.{h,m}'
+  s.requires_arc     = true
 end
