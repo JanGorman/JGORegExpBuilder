@@ -1,4 +1,0 @@
-JGORegExpBuilder
-================
-
-Create regular expressions
