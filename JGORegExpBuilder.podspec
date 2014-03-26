@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "JGORegExpBuilder"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "A delightful regular expression DSL"
   s.homepage         = "https://github.com/JanGorman/JGORegExpBuilder"
   s.license          = 'MIT'
