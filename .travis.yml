@@ -1,9 +1,9 @@
 language: objective-c
 before_script:
+  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
   - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
   - brew update
   - brew unlink xctool
   - brew install xctool
   - export LANG=en_US.UTF-8
-  - cd Demo ; pod install
 script: xctool -workspace Demo.xcworkspace -scheme Demo test
