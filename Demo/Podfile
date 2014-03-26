@@ -1,4 +1,8 @@
-pod "JGORegExpBuilder", :path => "../JGORegExpBuilder.podspec"
+if ENV['TRAVIS']
+  pod "JGORegExpBuilder", :git => "git://github.com/JanGorman/JGORegExpBuilder.git", :tag => '1.0.0'
+else
+  pod "JGORegExpBuilder", :path => "../JGORegExpBuilder.podspec"
+end
 
 target "DemoTests" do
   pod "Specta"
