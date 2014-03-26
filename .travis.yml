@@ -6,4 +6,4 @@ before_script:
   - brew unlink xctool
   - brew install xctool
   - export LANG=en_US.UTF-8
-script: xctool -workspace Demo.xcworkspace -scheme Demo test
+script: xctool -workspace JGORegExpBuilder.xcworkspace -scheme JGORegExpBuilder test | xcpretty -c
