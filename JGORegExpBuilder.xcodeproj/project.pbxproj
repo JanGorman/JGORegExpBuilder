@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F23D309B18E365A3006DFBFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23D309A18E365A3006DFBFE /* Foundation.framework */; };
+		F23D30A018E365A3006DFBFE /* JGORegExpBuilder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F23D309F18E365A3006DFBFE /* JGORegExpBuilder.h */; };
+		F23D30A218E365A3006DFBFE /* JGORegExpBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = F23D30A118E365A3006DFBFE /* JGORegExpBuilder.m */; };
+		F23D30A918E365A3006DFBFE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23D30A818E365A3006DFBFE /* XCTest.framework */; };
+		F23D30AA18E365A3006DFBFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23D309A18E365A3006DFBFE /* Foundation.framework */; };
+		F23D30AC18E365A3006DFBFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23D30AB18E365A3006DFBFE /* UIKit.framework */; };
+		F23D30AF18E365A3006DFBFE /* libJGORegExpBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F23D309718E365A3006DFBFE /* libJGORegExpBuilder.a */; };
+		F23D30B518E365A3006DFBFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F23D30B318E365A3006DFBFE /* InfoPlist.strings */; };
+		F23D30B718E365A3006DFBFE /* JGORegExpBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F23D30B618E365A3006DFBFE /* JGORegExpBuilderTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F23D30AD18E365A3006DFBFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F23D308F18E365A3006DFBFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F23D309618E365A3006DFBFE;
+			remoteInfo = JGORegExpBuilder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F23D309518E365A3006DFBFE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				F23D30A018E365A3006DFBFE /* JGORegExpBuilder.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F23D309718E365A3006DFBFE /* libJGORegExpBuilder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJGORegExpBuilder.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F23D309A18E365A3006DFBFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F23D309E18E365A3006DFBFE /* JGORegExpBuilder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JGORegExpBuilder-Prefix.pch"; sourceTree = "<group>"; };
+		F23D309F18E365A3006DFBFE /* JGORegExpBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JGORegExpBuilder.h; sourceTree = "<group>"; };
+		F23D30A118E365A3006DFBFE /* JGORegExpBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JGORegExpBuilder.m; sourceTree = "<group>"; };
+		F23D30A718E365A3006DFBFE /* JGORegExpBuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JGORegExpBuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F23D30A818E365A3006DFBFE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F23D30AB18E365A3006DFBFE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F23D30B218E365A3006DFBFE /* JGORegExpBuilderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JGORegExpBuilderTests-Info.plist"; sourceTree = "<group>"; };
+		F23D30B418E365A3006DFBFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F23D30B618E365A3006DFBFE /* JGORegExpBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JGORegExpBuilderTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F23D309418E365A3006DFBFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F23D309B18E365A3006DFBFE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F23D30A418E365A3006DFBFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F23D30A918E365A3006DFBFE /* XCTest.framework in Frameworks */,
+				F23D30AF18E365A3006DFBFE /* libJGORegExpBuilder.a in Frameworks */,
+				F23D30AC18E365A3006DFBFE /* UIKit.framework in Frameworks */,
+				F23D30AA18E365A3006DFBFE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F23D308E18E365A3006DFBFE = {
+			isa = PBXGroup;
+			children = (
+				F23D309C18E365A3006DFBFE /* JGORegExpBuilder */,
+				F23D30B018E365A3006DFBFE /* JGORegExpBuilderTests */,
+				F23D309918E365A3006DFBFE /* Frameworks */,
+				F23D309818E365A3006DFBFE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F23D309818E365A3006DFBFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F23D309718E365A3006DFBFE /* libJGORegExpBuilder.a */,
+				F23D30A718E365A3006DFBFE /* JGORegExpBuilderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F23D309918E365A3006DFBFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F23D309A18E365A3006DFBFE /* Foundation.framework */,
+				F23D30A818E365A3006DFBFE /* XCTest.framework */,
+				F23D30AB18E365A3006DFBFE /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F23D309C18E365A3006DFBFE /* JGORegExpBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				F23D309F18E365A3006DFBFE /* JGORegExpBuilder.h */,
+				F23D30A118E365A3006DFBFE /* JGORegExpBuilder.m */,
+				F23D309D18E365A3006DFBFE /* Supporting Files */,
+			);
+			path = JGORegExpBuilder;
+			sourceTree = "<group>";
+		};
+		F23D309D18E365A3006DFBFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F23D309E18E365A3006DFBFE /* JGORegExpBuilder-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F23D30B018E365A3006DFBFE /* JGORegExpBuilderTests */ = {
+			isa = PBXGroup;
+			children = (
+				F23D30B618E365A3006DFBFE /* JGORegExpBuilderTests.m */,
+				F23D30B118E365A3006DFBFE /* Supporting Files */,
+			);
+			path = JGORegExpBuilderTests;
+			sourceTree = "<group>";
+		};
+		F23D30B118E365A3006DFBFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F23D30B218E365A3006DFBFE /* JGORegExpBuilderTests-Info.plist */,
+				F23D30B318E365A3006DFBFE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F23D309618E365A3006DFBFE /* JGORegExpBuilder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F23D30BA18E365A3006DFBFE /* Build configuration list for PBXNativeTarget "JGORegExpBuilder" */;
+			buildPhases = (
+				F23D309318E365A3006DFBFE /* Sources */,
+				F23D309418E365A3006DFBFE /* Frameworks */,
+				F23D309518E365A3006DFBFE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JGORegExpBuilder;
+			productName = JGORegExpBuilder;
+			productReference = F23D309718E365A3006DFBFE /* libJGORegExpBuilder.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F23D30A618E365A3006DFBFE /* JGORegExpBuilderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F23D30BD18E365A3006DFBFE /* Build configuration list for PBXNativeTarget "JGORegExpBuilderTests" */;
+			buildPhases = (
+				F23D30A318E365A3006DFBFE /* Sources */,
+				F23D30A418E365A3006DFBFE /* Frameworks */,
+				F23D30A518E365A3006DFBFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F23D30AE18E365A3006DFBFE /* PBXTargetDependency */,
+			);
+			name = JGORegExpBuilderTests;
+			productName = JGORegExpBuilderTests;
+			productReference = F23D30A718E365A3006DFBFE /* JGORegExpBuilderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F23D308F18E365A3006DFBFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jan Gorman";
+			};
+			buildConfigurationList = F23D309218E365A3006DFBFE /* Build configuration list for PBXProject "JGORegExpBuilder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F23D308E18E365A3006DFBFE;
+			productRefGroup = F23D309818E365A3006DFBFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F23D309618E365A3006DFBFE /* JGORegExpBuilder */,
+				F23D30A618E365A3006DFBFE /* JGORegExpBuilderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F23D30A518E365A3006DFBFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F23D30B518E365A3006DFBFE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F23D309318E365A3006DFBFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F23D30A218E365A3006DFBFE /* JGORegExpBuilder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F23D30A318E365A3006DFBFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F23D30B718E365A3006DFBFE /* JGORegExpBuilderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F23D30AE18E365A3006DFBFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F23D309618E365A3006DFBFE /* JGORegExpBuilder */;
+			targetProxy = F23D30AD18E365A3006DFBFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F23D30B318E365A3006DFBFE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F23D30B418E365A3006DFBFE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F23D30B818E365A3006DFBFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F23D30B918E365A3006DFBFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F23D30BB18E365A3006DFBFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/JGORegExpBuilder.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JGORegExpBuilder/JGORegExpBuilder-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F23D30BC18E365A3006DFBFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/JGORegExpBuilder.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JGORegExpBuilder/JGORegExpBuilder-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F23D30BE18E365A3006DFBFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JGORegExpBuilder/JGORegExpBuilder-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JGORegExpBuilderTests/JGORegExpBuilderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F23D30BF18E365A3006DFBFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JGORegExpBuilder/JGORegExpBuilder-Prefix.pch";
+				INFOPLIST_FILE = "JGORegExpBuilderTests/JGORegExpBuilderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F23D309218E365A3006DFBFE /* Build configuration list for PBXProject "JGORegExpBuilder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F23D30B818E365A3006DFBFE /* Debug */,
+				F23D30B918E365A3006DFBFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F23D30BA18E365A3006DFBFE /* Build configuration list for PBXNativeTarget "JGORegExpBuilder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F23D30BB18E365A3006DFBFE /* Debug */,
+				F23D30BC18E365A3006DFBFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F23D30BD18E365A3006DFBFE /* Build configuration list for PBXNativeTarget "JGORegExpBuilderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F23D30BE18E365A3006DFBFE /* Debug */,
+				F23D30BF18E365A3006DFBFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F23D308F18E365A3006DFBFE /* Project object */;
+}
