@@ -394,11 +394,11 @@ JGORegExpBuilder *RegExpBuilder() {
 - (NSString *)quantityLiteral {
     if (self.minValue != -1) {
         if (self.maxValue != -1) {
-            return [NSString stringWithFormat:@"{%d,%d}", self.minValue, self.maxValue];
+            return [NSString stringWithFormat:@"{%zd,%zd}", self.minValue, self.maxValue];
         }
-        return [NSString stringWithFormat:@"{%d,}", self.minValue];
+        return [NSString stringWithFormat:@"{%zd,}", self.minValue];
     }
-    return [NSString stringWithFormat:@"{0,%d}", self.maxValue];
+    return [NSString stringWithFormat:@"{0,%zd}", self.maxValue];
 }
 
 @dynamic characterLiteral;
@@ -409,7 +409,7 @@ JGORegExpBuilder *RegExpBuilder() {
     } else if (self.isOfAnyValue) {
         return @".";
     } else if (self.ofGroupValue > 0) {
-        return [NSString stringWithFormat:@"\\%d", self.ofGroupValue];
+        return [NSString stringWithFormat:@"\\%zd", self.ofGroupValue];
     } else if (![self.fromValue isEqualToString:@""]) {
         return [NSString stringWithFormat:@"[%@]", self.fromValue];
     } else if (![self.notFromValue isEqualToString:@""]) {
