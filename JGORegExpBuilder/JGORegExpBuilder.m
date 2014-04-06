@@ -131,7 +131,7 @@ JGORegExpBuilder *RegExpBuilder() {
 
 - (JGORegExpBuilder *(^)())tab {
     return ^JGORegExpBuilder *() {
-        return self.exactly(1).of(@"\\t");
+        return self.exactly(1).of(@"\t");
     };
 }
 
@@ -431,7 +431,7 @@ JGORegExpBuilder *RegExpBuilder() {
     return ^BOOL(NSString *string) {
         NSRegularExpression *regExp = self.regularExpression;
         NSUInteger matches = [regExp numberOfMatchesInString:string
-                                                     options:kNilOptions
+                                                     options:0
                                                        range:NSMakeRange(0, [string length])];
         return matches > 0;
     };
@@ -459,9 +459,7 @@ JGORegExpBuilder *RegExpBuilder() {
 #pragma mark - Private
 
 - (void)flushState {
-    if (![self.ofValue isEqualToString:@""] || self.isOfAnyValue || self.ofGroupValue > 1
-            || ![self.fromValue isEqualToString:@""]
-            || ![self.notFromValue isEqualToString:@""] || ![self.likeValue isEqualToString:@""]) {
+    if ([self mustFlushState]) {
         NSString *captureLiteral = self.capture ? @"" : @"?:";
         NSString *reluctantLiteral = self.isReluctant ? @"?" : @"";
         [self.literal appendFormat:@"(%@(?:%@)%@%@)",
@@ -472,6 +470,15 @@ JGORegExpBuilder *RegExpBuilder() {
 
         [self clear];
     }
+}
+
+- (BOOL)mustFlushState {
+    return ![self.ofValue isEqualToString:@""]
+            || self.isOfAnyValue
+            || self.ofGroupValue > 1
+            || ![self.fromValue isEqualToString:@""]
+            || ![self.notFromValue isEqualToString:@""]
+            || ![self.likeValue isEqualToString:@""];
 }
 
 - (void)clear {

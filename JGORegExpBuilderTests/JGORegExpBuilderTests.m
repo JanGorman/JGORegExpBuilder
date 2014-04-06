@@ -213,4 +213,21 @@
     XCTAssertTrue([@"dart" isEqualToString:[string substringWithRange:[checkingResult rangeAtIndex:1]]]);
 }
 
+- (void)testSomething {
+    JGORegExpBuilder *builder = RegExpBuilder().something();
+    NSString *something = @"something";
+
+    XCTAssertTrue(builder.test(something));
+
+    NSString *nothing = @"";
+    XCTAssertFalse(builder.test(nothing));
+}
+
+- (void)testTab {
+    JGORegExpBuilder *builder = RegExpBuilder().tab();
+    NSString *stringWithTab = @"\tasdsad";
+
+    XCTAssertTrue(builder.test(stringWithTab));
+}
+
 @end
