@@ -1,6 +1,6 @@
 # JGORegExpBuilder
 
-[![Build Status](https://travis-ci.org/JanGorman/JGORegExpBuilder.png)](https://travis-ci.org/JanGorman/JGORegExpBuilder)
+[![Build Status](https://travis-ci.org/JanGorman/JGORegExpBuilder.svg?branch=master)](https://travis-ci.org/JanGorman/JGORegExpBuilder)
 
 ## Usage
 
