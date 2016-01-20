@@ -6,7 +6,6 @@ before_script:
   - brew unlink xctool
   - brew install xctool
   - export LANG=en_US.UTF-8
-script: xctool -workspace JGORegExpBuilder.xcworkspace -scheme JGORegExpBuilder build test -sdk \
-iphonesimulator GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -c
+script: xctool -workspace JGORegExpBuilder.xcworkspace -scheme JGORegExpBuilder build test -sdk iphonesimulator GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -c
 after_success:
   - bash <(curl -s https://codecov.io/bash)
